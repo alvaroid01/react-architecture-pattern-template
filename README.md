@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# About this template
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This template was created with the purpose of offering a scalable project with a clean  architecture and ordered folder structure to use in a React application.
 
-## Available Scripts
+## Template structure
 
-In the project directory, you can run:
+This template gets rid of some unnecessary files that are created when launching the create-react-app command and puts all the relevant src folders inside the modules folder.
 
-### `npm start`
+This folder contains:
+-Assets: this folder will hold all the recources and assets such as images or videos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-Components: in which all the components of the application will be created. For the sake of reusability I hae included a common folder for those components that may be used in multiple parts of the app. There is also a index.js file inside of which all the components will be imported and then exported. This way the imported files can be easily spotted and read i.g: 
+```
+//Old import
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+import TestComponent from './modules/components/common/TestComponent/TestComponent';
 
-### `npm test`
+//New import
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+import { TestComponent } from './modules/components';
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Constants: this folder contains a locales folder in which all the translations will be located separated on the different languages we want.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-Context: context folder is for the Contexts and Provider or all the Redux-related files.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-Services: this folder purpose is to hold all the API call and all the interactions with the backend or an external API as well as the React router files and routes.    It also contains an index.js which can be used the same way as the one above.
 
-### `npm run eject`
+-Utils: here we will put all the custom hooks or helpers to be used in the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-Views: last but not least we have the views folder divided into public and private which will hold all the ui of the application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+It is important to separate the UI from the logic to make the app scalable and organized. When creating a component it would be ideal to create a hook for each component inside the utils/hooks folder and separate all the big and convoluted components into subcomponents to avoid having big and bulky files and be able to find whatever we are looking for easily.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
